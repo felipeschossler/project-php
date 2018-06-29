@@ -12,7 +12,6 @@ CREATE TABLE agencia
     situacao CHAR(1) /*A-ATIVO I-INATIVO*/ NOT NULL , 
     PRIMARY KEY (idAgencia)
 ) 
-ENGINE = InnoDB;
 
 /*tabela cliente*/
 
@@ -25,7 +24,6 @@ CREATE TABLE cliente
     tipoCliente CHAR(1) /*F-FISICO J-JURIDICO*/ NOT NULL , 
     PRIMARY KEY (idCliente)
 )
-ENGINE = InnoDB;
 
 /*tabela tiposDeConta*/
 
@@ -35,7 +33,6 @@ CREATE TABLE tiposDeConta
     descricao VARCHAR(30) NOT NULL , 
     PRIMARY KEY (idTipoConta)
 ) 
-ENGINE = InnoDB;
 
 /*inserts na tabela tiposDeConta*/
 
@@ -53,7 +50,6 @@ CREATE TABLE tiposDeMovimento
     tipoPagamento VARCHAR(1) NOT NULL , 
     PRIMARY KEY (idTipoMov)
 )
-ENGINE = InnoDB;
 
 /*inserts na tabela tiposDeMovimento*/
 
@@ -75,7 +71,6 @@ CREATE TABLE conta
     CONSTRAINT fk_CliCon FOREIGN KEY (idCliente) REFERENCES cliente (idCliente) , 
     CONSTRAINT fk_TipoContaConta FOREIGN KEY (idTipoConta) REFERENCES tiposDeConta (idTipoConta)   
 )
-ENGINE = InnoDB;
 
 CREATE TABLE movimento
 (
@@ -87,4 +82,3 @@ CREATE TABLE movimento
     CONSTRAINT fk_ConMov FOREIGN KEY (idConta) REFERENCES conta (idConta) , 
     CONSTRAINT fk_TpMovMov FOREIGN KEY (idTipoMov) REFERENCES tiposDeMovimento (idTipoMov) 
 )
-ENGINE = InnoDB;
