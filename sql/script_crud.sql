@@ -11,7 +11,7 @@ CREATE TABLE agencia
     cidade VARCHAR(40) NOT NULL ,
     situacao CHAR(1) /*A-ATIVO I-INATIVO*/ NOT NULL , 
     PRIMARY KEY (idAgencia)
-) 
+); 
 
 /*tabela cliente*/
 
@@ -23,7 +23,7 @@ CREATE TABLE cliente
     cpf VARCHAR(11) NOT NULL , 
     tipoCliente CHAR(1) /*F-FISICO J-JURIDICO*/ NOT NULL , 
     PRIMARY KEY (idCliente)
-)
+);
 
 /*tabela tiposDeConta*/
 
@@ -32,7 +32,7 @@ CREATE TABLE tiposDeConta
     idTipoConta INT NOT NULL AUTO_INCREMENT , 
     descricao VARCHAR(30) NOT NULL , 
     PRIMARY KEY (idTipoConta)
-) 
+);
 
 /*inserts na tabela tiposDeConta*/
 
@@ -49,7 +49,7 @@ CREATE TABLE tiposDeMovimento
     descricao VARCHAR(30) NOT NULL , 
     tipoPagamento VARCHAR(1) NOT NULL , 
     PRIMARY KEY (idTipoMov)
-)
+);
 
 /*inserts na tabela tiposDeMovimento*/
 
@@ -70,7 +70,7 @@ CREATE TABLE conta
     CONSTRAINT fk_AgeConta FOREIGN KEY (idAgencia) REFERENCES agencia (idAgencia) , 
     CONSTRAINT fk_CliCon FOREIGN KEY (idCliente) REFERENCES cliente (idCliente) , 
     CONSTRAINT fk_TipoContaConta FOREIGN KEY (idTipoConta) REFERENCES tiposDeConta (idTipoConta)   
-)
+);
 
 CREATE TABLE movimento
 (
@@ -81,4 +81,4 @@ CREATE TABLE movimento
     PRIMARY KEY (idConta, idTipoMov, dataMovimento) , 
     CONSTRAINT fk_ConMov FOREIGN KEY (idConta) REFERENCES conta (idConta) , 
     CONSTRAINT fk_TpMovMov FOREIGN KEY (idTipoMov) REFERENCES tiposDeMovimento (idTipoMov) 
-)
+);
