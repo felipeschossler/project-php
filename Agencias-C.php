@@ -1,21 +1,12 @@
 <html>
-
 	<head>
-	
 		<title>
-		
 			Consulta de Agencias
-		
 		</title>
-	
 		<link rel="stylesheet" type="text/css" href="menu.css">
-	
 	</head>
-	
 	<body>
-	
 		<?php
-		
 			$codigoAgencia = 0;
 			$nomeAgencia   = NULL;
 			$cidadeAgencia = NULL;
@@ -27,9 +18,6 @@
 			$Agencia = new Agencias($codigoAgencia, $nomeAgencia, $cidadeAgencia);
 			
 			$Agencia-> listarAgencia();
-		
 		?>
-		
 	</body>
-
 </html>
