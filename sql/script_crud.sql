@@ -52,14 +52,15 @@ INSERT INTO tiposDeConta (descricao) VALUES ('Conta Poupança');
 CREATE TABLE tiposDeMovimento 
 ( 
     idTipoMov INT NOT NULL AUTO_INCREMENT , 
-    descricao VARCHAR(30) NOT NULL , 
+    descricao VARCHAR(30) NOT NULL ,
+    tipoMovimento VARCHAR(10) NOT NULL , /*TIPO DE MOVIMENTO SERA DEBITO OU CREDITO */
     PRIMARY KEY (idTipoMov)
 );
 
 /*inserts na tabela tiposDeMovimento*/
 
-INSERT INTO tiposdemovimento (descricao) VALUES ('Retirada em Dinheiro');
-INSERT INTO tiposdemovimento (descricao) VALUES ('Depósito em Dinheiro');
+INSERT INTO tiposdemovimento (descricao, tipoMovimento) VALUES ('Retirada em Dinheiro','debito');
+INSERT INTO tiposdemovimento (descricao, tipoMovimento) VALUES ('Depósito em Dinheiro','credito');
 
 /*tabela conta*/
 
@@ -79,11 +80,13 @@ CREATE TABLE conta
 
 CREATE TABLE movimento
 (
+    idCliente INTEGER NOT NULL , 
     idConta INTEGER NOT NULL , 
     idTipoMov INTEGER NOT NULL , 
     dataMovimento DATE NOT NULL,
     valor FLOAT(10) NOT NULL ,
-    PRIMARY KEY (idConta, idTipoMov, dataMovimento) , 
+    PRIMARY KEY (idCliente, idConta, idTipoMov, dataMovimento) , 
+    CONSTRAINT fk_CliMov FOREIGN KEY (idCliente) REFERENCES cliente (idCliente) ,
     CONSTRAINT fk_ConMov FOREIGN KEY (idConta) REFERENCES conta (idConta) , 
     CONSTRAINT fk_TpMovMov FOREIGN KEY (idTipoMov) REFERENCES tiposDeMovimento (idTipoMov) 
 );
