@@ -2,9 +2,9 @@
 
 CREATE DATABASE banco CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-/*tabela agencia*/
+/*tabela Agencias*/
 
-CREATE TABLE agencia 
+CREATE TABLE Agencias 
 ( 
     idAgencia INT NOT NULL AUTO_INCREMENT , 
     nome VARCHAR(40) NOT NULL , 
@@ -14,7 +14,7 @@ CREATE TABLE agencia
 
 /*tabela cliente*/
 
-CREATE TABLE cliente 
+CREATE TABLE Clientes
 ( 
     idCliente INT NOT NULL AUTO_INCREMENT , 
     nome VARCHAR(40) NOT NULL , 
@@ -27,15 +27,15 @@ CREATE TABLE cliente
 
 /*inserts na tabela cliente*/
 
-INSERT INTO cliente (tipoCliente) VALUES('Físico'); /*FÍSICO*/
-INSERT INTO cliente (tipoCliente) VALUES('Jurídico'); /*JURÍDICO*/
+INSERT INTO Clientes (tipoCliente) VALUES('Físico'); /*FÍSICO*/
+INSERT INTO Clientes (tipoCliente) VALUES('Jurídico'); /*JURÍDICO*/
 
-INSERT INTO cliente (situacao) VALUES('Ativo'); /*ATIVO*/ 
-INSERT INTO cliente (situacao) VALUES('Inativo'); /*INATIVO*/
+INSERT INTO Clientes (situacao) VALUES('Ativo'); /*ATIVO*/ 
+INSERT INTO Clientes (situacao) VALUES('Inativo'); /*INATIVO*/
 
 /*tabela tiposDeConta*/
 
-CREATE TABLE tiposDeConta 
+CREATE TABLE TiposDeConta 
 ( 
     idTipoConta INT NOT NULL AUTO_INCREMENT , 
     descricao VARCHAR(30) NOT NULL , 
@@ -44,12 +44,12 @@ CREATE TABLE tiposDeConta
 
 /*inserts na tabela tiposDeConta*/
 
-INSERT INTO tiposDeConta (descricao) VALUES ('Conta Corrente');
-INSERT INTO tiposDeConta (descricao) VALUES ('Conta Poupança');
+INSERT INTO TiposDeConta (descricao) VALUES ('Conta Corrente');
+INSERT INTO TiposDeConta (descricao) VALUES ('Conta Poupança');
 
-/*tabela tiposDeMovimento*/
+/*tabela TiposDeMovimento*/
 
-CREATE TABLE tiposDeMovimento 
+CREATE TABLE TiposDeMovimento
 ( 
     idTipoMov INT NOT NULL AUTO_INCREMENT , 
     descricao VARCHAR(30) NOT NULL ,
@@ -57,14 +57,14 @@ CREATE TABLE tiposDeMovimento
     PRIMARY KEY (idTipoMov)
 );
 
-/*inserts na tabela tiposDeMovimento*/
+/*inserts na tabela TiposDeMovimento*/
 
-INSERT INTO tiposdemovimento (descricao, tipoMovimento) VALUES ('Retirada em Dinheiro','debito');
-INSERT INTO tiposdemovimento (descricao, tipoMovimento) VALUES ('Depósito em Dinheiro','credito');
+INSERT INTO TiposDeMovimento (descricao, tipoMovimento) VALUES ('Retirada em Dinheiro','debito');
+INSERT INTO TiposDeMovimento (descricao, tipoMovimento) VALUES ('Depósito em Dinheiro','credito');
 
-/*tabela conta*/
+/*tabela Conta*/
 
-CREATE TABLE conta
+CREATE TABLE Contas
 ( 
     idConta INT NOT NULL AUTO_INCREMENT , 
     idAgencia INTEGER NOT NULL , 
@@ -73,12 +73,12 @@ CREATE TABLE conta
     limite FLOAT(10) NOT NULL , 
     dataAbertura DATE NOT NULL , 
     PRIMARY KEY (idConta) ,
-    CONSTRAINT fk_AgeConta FOREIGN KEY (idAgencia) REFERENCES agencia (idAgencia) , 
-    CONSTRAINT fk_CliCon FOREIGN KEY (idCliente) REFERENCES cliente (idCliente) , 
-    CONSTRAINT fk_TipoContaConta FOREIGN KEY (idTipoConta) REFERENCES tiposDeConta (idTipoConta)   
+    CONSTRAINT fk_AgeConta FOREIGN KEY (idAgencia) REFERENCES Agencias (idAgencia) , 
+    CONSTRAINT fk_CliCon FOREIGN KEY (idCliente) REFERENCES Clientes (idCliente) , 
+    CONSTRAINT fk_TipoContaConta FOREIGN KEY (idTipoConta) REFERENCES TiposDeConta (idTipoConta)   
 );
 
-CREATE TABLE movimento
+CREATE TABLE Movimentos
 (
     idCliente INTEGER NOT NULL , 
     idConta INTEGER NOT NULL , 
@@ -86,7 +86,7 @@ CREATE TABLE movimento
     dataMovimento DATE NOT NULL,
     valor FLOAT(10) NOT NULL ,
     PRIMARY KEY (idCliente, idConta, idTipoMov, dataMovimento) , 
-    CONSTRAINT fk_CliMov FOREIGN KEY (idCliente) REFERENCES cliente (idCliente) ,
-    CONSTRAINT fk_ConMov FOREIGN KEY (idConta) REFERENCES conta (idConta) , 
-    CONSTRAINT fk_TpMovMov FOREIGN KEY (idTipoMov) REFERENCES tiposDeMovimento (idTipoMov) 
+    CONSTRAINT fk_CliMov FOREIGN KEY (idCliente) REFERENCES Clientes (idCliente) ,
+    CONSTRAINT fk_ConMov FOREIGN KEY (idConta) REFERENCES Contas (idConta) , 
+    CONSTRAINT fk_TpMovMov FOREIGN KEY (idTipoMov) REFERENCES TiposDeMovimento (idTipoMov) 
 );
