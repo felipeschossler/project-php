@@ -9,7 +9,6 @@ CREATE TABLE agencia
     idAgencia INT NOT NULL AUTO_INCREMENT , 
     nome VARCHAR(40) NOT NULL , 
     cidade VARCHAR(40) NOT NULL ,
-    situacao CHAR(1) /*A-ATIVO I-INATIVO*/ NOT NULL , 
     PRIMARY KEY (idAgencia)
 ); 
 
@@ -21,9 +20,18 @@ CREATE TABLE cliente
     nome VARCHAR(40) NOT NULL , 
     cidade VARCHAR(40) NOT NULL , 
     cpf VARCHAR(11) NOT NULL , 
-    tipoCliente CHAR(1) /*F-FISICO J-JURIDICO*/ NOT NULL , 
+    tipoCliente VARCHAR(10) /*FISICO JURIDICO*/ NOT NULL , 
+    situacao VARCHAR(10) /*ATIVO INATIVO*/ NOT NULL ,
     PRIMARY KEY (idCliente)
 );
+
+/*inserts na tabela cliente*/
+
+INSERT INTO cliente (tipoCliente) VALUES('Físico'); /*FÍSICO*/
+INSERT INTO cliente (tipoCliente) VALUES('Jurídico'); /*JURÍDICO*/
+
+INSERT INTO cliente (situacao) VALUES('Ativo'); /*ATIVO*/ 
+INSERT INTO cliente (situacao) VALUES('Inativo'); /*INATIVO*/
 
 /*tabela tiposDeConta*/
 
@@ -36,10 +44,8 @@ CREATE TABLE tiposDeConta
 
 /*inserts na tabela tiposDeConta*/
 
-INSERT INTO tiposDeConta (descricao) VALUES ('Conta Corrente Especial');
 INSERT INTO tiposDeConta (descricao) VALUES ('Conta Corrente');
 INSERT INTO tiposDeConta (descricao) VALUES ('Conta Poupança');
-INSERT INTO tiposDeConta (descricao) VALUES ('CDB');
 
 /*tabela tiposDeMovimento*/
 
@@ -47,14 +53,13 @@ CREATE TABLE tiposDeMovimento
 ( 
     idTipoMov INT NOT NULL AUTO_INCREMENT , 
     descricao VARCHAR(30) NOT NULL , 
-    tipoPagamento VARCHAR(1) NOT NULL , 
     PRIMARY KEY (idTipoMov)
 );
 
 /*inserts na tabela tiposDeMovimento*/
 
-INSERT INTO tiposdemovimento (descricao, tipoPagamento) VALUES ('Retirada em Dinheiro', 'Débito');
-INSERT INTO tiposdemovimento (descricao, tipoPagamento) VALUES ('Depósito em Dinheiro', 'Crédito');
+INSERT INTO tiposdemovimento (descricao) VALUES ('Retirada em Dinheiro');
+INSERT INTO tiposdemovimento (descricao) VALUES ('Depósito em Dinheiro');
 
 /*tabela conta*/
 
@@ -63,9 +68,9 @@ CREATE TABLE conta
     idConta INT NOT NULL AUTO_INCREMENT , 
     idAgencia INTEGER NOT NULL , 
     idCliente INTEGER NOT NULL , 
+    idTipoConta INTEGER NOT NULL , 
     limite FLOAT(10) NOT NULL , 
     dataAbertura DATE NOT NULL , 
-    idTipoConta INTEGER NOT NULL , 
     PRIMARY KEY (idConta) ,
     CONSTRAINT fk_AgeConta FOREIGN KEY (idAgencia) REFERENCES agencia (idAgencia) , 
     CONSTRAINT fk_CliCon FOREIGN KEY (idCliente) REFERENCES cliente (idCliente) , 
