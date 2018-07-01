@@ -48,7 +48,7 @@
         
         $banco = abrirBanco();
         //a consulta sql
-        $sql = "SELECT * FROM TiposMovimento ORDER BY tipoMov";
+        $sql = "SELECT * FROM TiposMovimento";
         //executando a consulta
         $resultado = $banco->query($sql);
         //mostra todos os usuários dentro do array
