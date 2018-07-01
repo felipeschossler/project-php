@@ -26,27 +26,17 @@ $Clientes = selectIdCliente($_POST["idCliente"]);
                 <td><input type="text" name="cidadeCliente" value="<?=$Clientes["cidadeCliente"]?>" /></td>
             </tr>
             <tr>
-                <td>Tipo de Cliente</td>
-                <td>
-                    <select>
-                        <option value="0">Física</option>
-                        <option value="1">Jurídica</option>
-                    </select>
-                </td>
+                <td>Tipo de Cliente F=Física/J=Jurídica</td>
+                <td><input type="text" name="tipoCliente" value="<?=$Clientes["tipoCliente"]?>" /></td>
             </tr>
             <tr>
-                <td>Situação do Cliente</td>
-                <td>
-                    <select>
-                        <option value="0">Ativo</option>
-                        <option value="1">Inativo</option>
-                    </select>
-                </td>
+                <td>Situação do Cliente A=Ativo/I=Inativo</td>
+                <td><input type="text" name="situacaoCliente" value="<?=$Clientes["situacaoCliente"]?>" /></td>
             </tr>
             <tr>
                 <td>
                     <input type="hidden" name="acao" value="Alterar" />
-                    <input type="hidden" name="idAgencia" value="<?=$Agencias["idAgencia"]?>" />
+                    <input type="hidden" name="idCliente" value="<?=$Clientes["idCliente"]?>" />
                 </td>
                 <td><input type="submit" name="enviar" value="Alterar" /></td>
             </tr>

@@ -9,8 +9,8 @@
             <th>Nome</th>
             <th>CPF</th>
             <th>Cidade</th>
-            <th>Tipo de Cliente</th>
-            <th>Situação do Cliente</th>
+            <th>Tipo de Cliente F=Física/J=Jurídica</th>
+            <th>Situação do Cliente A=Ativo/I=Inativo</th>
             <th>Editar</th>
             <th>Excluir</th>
         </tr>

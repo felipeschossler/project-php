@@ -3,13 +3,13 @@
     //verificando valor da acao para redirecionar para a determinada acao
     if(isset($_POST["acao"])){
         if ($_POST["acao"] == "Enviar"){
-            inserirAgencia();
+            inserirCliente();
         }
         if ($_POST["acao"] == "Alterar"){
-            alterarAgencia();
+            alterarCliente();
         }
         if ($_POST["acao"] == "Excluir"){
-            excluirAgencia();
+            excluirCliente();
         }
         
     }
@@ -26,7 +26,7 @@
     }
 
     //funcao que insere agencia
-    function inserirAgencia(){
+    function inserirCliente(){
 
         $banco = abrirBanco();
         //declarando as variáveis usadas na inserção dos dados

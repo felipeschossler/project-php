@@ -27,22 +27,12 @@
                         <td><input type="text" name="cidadeCliente" value="" /></td>
                     </tr>
                     <tr>
-                        <td>Tipo de Cliente</td>
-                        <td>
-                            <select>
-                                <option name="" value="0">Física</option>
-                                <option value="1">Jurídica</option>
-                            </select>
-                        </td>
+                        <td>Tipo de Cliente F=Física/J=Jurídica</td>
+                        <td><input type="text" name="tipoCliente" value="" /></td>
                     </tr>
                     <tr>
-                        <td>Situação do Cliente</td>
-                        <td>
-                            <select>
-                                <option value="0">Ativo</option>
-                                <option value="1">Inativo</option>
-                            </select>
-                        </td>
+                        <td>Situação do Cliente A=Ativo/I=Inativo</td>
+                        <td><input type="text" name="situacaoCliente" value="" /></td>
                     </tr>
                     <tr>
                         <td><input type="submit" name="acao" value="Enviar" /></td>
