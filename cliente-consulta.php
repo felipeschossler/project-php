@@ -30,6 +30,7 @@
                         <input type="submit" name="Editar" value="Editar" />
                     </form>
                 </td>
+                <!--
                 <td>
                     <form name="excluir" action="cliente-c.php" method="POST">
                         <input type="hidden" name="idCliente" value=<?=$Clientes["idCliente"]?> />
@@ -37,6 +38,7 @@
                     </form>    
                     
                 </td>
+                -->
             </tr>   
 
         <?php } ?>
