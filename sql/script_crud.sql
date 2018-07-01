@@ -25,14 +25,6 @@ CREATE TABLE Clientes
     PRIMARY KEY (idCliente)
 );
 
-/*inserts na tabela cliente*/
-
-INSERT INTO Clientes (tipoCliente) VALUES('Físico'); /*FÍSICO*/
-INSERT INTO Clientes (tipoCliente) VALUES('Jurídico'); /*JURÍDICO*/
-
-INSERT INTO Clientes (situacaoCliente) VALUES('Ativo'); /*ATIVO*/ 
-INSERT INTO Clientes (situacaoCliente) VALUES('Inativo'); /*INATIVO*/
-
 /*tabela tiposDeConta*/
 
 CREATE TABLE TiposDeConta 
