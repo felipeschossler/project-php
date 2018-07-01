@@ -1,9 +1,12 @@
 <?php ob_start() ?>
 
 <?php
-		@$codigoAgencia = $_POST['codigoAgencia'];
-		@$nomeAgencia = $_POST['nomeAgencia'];
-		@$cidadeAgencia = $_POST['cidadeAgencia'];
+		@$idCliente = $_POST['idCliente'];
+		@$nomeCliente = $_POST['nomeCliente'];
+        @$cidadeCliente = $_POST['cidadeCliente'];
+        @$cpfCliente = $_POST['cpfCliente'];
+		@$tipoCliente = $_POST['tipoCliente'];
+		@$situacaoCliente = $_POST['situacaoCliente'];
 		
 		//disponibiliza a classe conexão
 		include_once("./classes/Conexao.class.php");
@@ -11,7 +14,7 @@
 		
 		//instancia um objeto na classe de conexao
 		$con = new Conexao();
-		$Agencia = new Agencia($codigoAgencia, $nomeAgencia, $cidadeAgencia);
+		$Cliente = new Cliente($idCliente, $nomeCliente, $cidadeCliente, $cpfCliente, $tipoCliente, $situacaoCliente);
 
 	if (isset($_GET['acao'])) {
 		//variavel acao é enviada por get do método listar do .class ou não tem valor algum quando vem diretamente em resposta ao action do formulario -F.
@@ -22,9 +25,9 @@
 		//inclusão
 		case 0 :
 			//chama o metodo incluir da instancia
-			$Agencia->incluirAgencia();
+			$Cliente->incluirCliente();
 		
-			header ('location: Menu.php?pag=Agencia-C');
+			header ('location: Menu.php?pag=Cliente-C');
 		break;
 		
 		//exclusão
@@ -34,9 +37,9 @@
 			}
 
 			//chama o método excluirOrganizacaoMilitar da instancia
-			$Agencia->excluirAgencia($chave);
+			$Agencia->excluirCliente($chave);
 			
-			header ('location: Menu.php?pag=Agencia-C');
+			header ('location: Menu.php?pag=Cliente-C');
 		break;
 	}
 ?>

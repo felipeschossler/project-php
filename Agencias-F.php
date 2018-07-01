@@ -1,19 +1,18 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Cadastro Agências</title>
+    <title>Agencias</title>
 </head>
 <body>
 	<form name="Agencias" method="POST" action="Agencias-P.php" onSubmit="return ValidaAgencia()">
         <center>
-            <h3>Cadastro de Agências</h3><br>
+            <h3>Cadastro de Agencias</h3><br>
             <table border="0">
                 <tr>
                     <th align="right">
-                        Código da Agência - CODAG
+                        Código da Agencia - CODAG
                     </th>
                     <th align="left">
-                        <input type="text" name="idAgencia" title="Informe a agência" size="20" maxlength="20">
+                        <input type="text" name="codigoAgencia" title="Informe a agencia" size="20" maxlength="20">
                     </th>
                 </tr>
                  <tr>
@@ -21,7 +20,7 @@
                         Nome
                     </th>
                     <th align="left">
-                        <input type="text" name="nomeAgencia" title="Informe o nome da agência" size="20" maxlength="20">
+                        <input type="text" name="nomeAgencia" title="Informe o nome da agencia" size="20" maxlength="20">
                     </th>
                 </tr>
                  <tr>
@@ -29,7 +28,7 @@
                         Cidade
                     </th>
                     <th align="left">
-                        <input type="text" name="cidadeAgencia" title="Informe a cidade da agência" size="20" maxlength="20">
+                        <input type="text" name="cidadeAgencia" title="Informe a cidade da agencia" size="20" maxlength="20">
                     </th>
                 </tr>
             </table>
@@ -42,7 +41,9 @@
                         <input type="reset" title="Limpar">
                     </th>
                     <th>
-                        <a href="index.html" >Voltar para a Página Principal</a>
+                        <a href="Menu.php?pag=Agencias-C">
+                            <img src="./imagens/lupa.png"  title="Consultar" height="30" width="30"/>
+                        </a>
                     </th>
                 </tr>
             </table>
