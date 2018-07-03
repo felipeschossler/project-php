@@ -37,7 +37,6 @@ CREATE TABLE TiposDeConta
 /*inserts na tabela tiposDeConta*/
 
 INSERT INTO TiposDeConta (descricaoTipoConta) VALUES ('Conta Corrente');
-INSERT INTO TiposDeConta (descricaoTipoConta) VALUES ('Conta Poupança');
 
 /*tabela TiposDeMovimento*/
 
@@ -51,8 +50,8 @@ CREATE TABLE TiposMovimento
 
 /*inserts na tabela TiposDeMovimento*/
 
-INSERT INTO TiposMovimento (descTipoMov, tipoMov) VALUES ('Retirada em Dinheiro','debito');
-INSERT INTO TiposMovimento (descTipoMov, tipoMov) VALUES ('Depósito em Dinheiro','credito');
+INSERT INTO TiposMovimento (descTipoMov, tipoMov) VALUES ('Retirada em Dinheiro','Débito');
+INSERT INTO TiposMovimento (descTipoMov, tipoMov) VALUES ('Depósito em Dinheiro','Crédito');
 
 /*tabela Conta*/
 
