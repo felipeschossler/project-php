@@ -12,7 +12,6 @@
             <th>Tipo de Cliente F=Física/J=Jurídica</th>
             <th>Situação do Cliente A=Ativo/I=Inativo</th>
             <th>Editar</th>
-            <th>Excluir</th>
         </tr>
     </thead>
     <tbody>
