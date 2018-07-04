@@ -2,6 +2,7 @@
     <head>
         <title>Cadastrar - Tipos de Movimento</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/mystyle.css" />
     </head>
     <body>
         <form name="dadosTipoMov" action="tiposmovimento-c.php" method="POST">

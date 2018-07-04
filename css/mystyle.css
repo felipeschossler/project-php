@@ -10,3 +10,7 @@ li{
 .twoh2{
     font-size: 25px;
 }
+
+input{
+    text-transform: uppercase;
+}

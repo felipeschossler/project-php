@@ -3,6 +3,7 @@
     <head>
         <title>Cadastrar - Cliente</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/mystyle.css" />
     </head>
     <body>
         <form name="dadosCliente" action="cliente-c.php" method="POST">
