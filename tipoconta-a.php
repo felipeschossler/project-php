@@ -6,6 +6,7 @@ $TiposDeConta = selectIdTipoConta($_POST["idTipoConta"]);
 <head>
     <title>Alterar - Tipo de Conta</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/mystyle.css" />
 </head>
 <body>
     <form name="dadosTipoConta" action="tipoconta-c.php" method="POST">
@@ -17,12 +18,12 @@ $TiposDeConta = selectIdTipoConta($_POST["idTipoConta"]);
                 </tr>   
                 <tr>
                     <td>Descrição:</td>
-                    <td><input type="text" name="descricaoTipoConta" value="<?=$TiposDeConta["descricaoTipoConta"]?>" /></td>
+                    <td><input type="text" name="descricaoTipoConta" value="<?=$TiposDeConta["descricaoTipoConta"]?>" onkeyup="this.value = this.value.toUpperCase();"/></td>
                 </tr>
                 <tr>
                     <td>
                         <input type="hidden" name="acao" value="Alterar" />
-                        <input type="hidden" name="idTipoConta" value="<?=$TiposDeConta["idTipoConta"]?>" />
+                        <input type="hidden" name="idTipoConta" value="<?=$TiposDeConta["idTipoConta"]?>" onkeyup="this.value = this.value.toUpperCase();"/>
                     </td>
                     <td><input type="submit" name="enviar" value="Alterar" /></td>
                 </tr>

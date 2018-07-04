@@ -6,6 +6,7 @@ $Agencias = selectIdAgencia($_POST["idAgencia"]);
 <head>
     <title>Alterar - Agência</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/mystyle.css" />
 </head>
 <body>
     <form name="dadosAgencia" action="agencia-c.php" method="POST">
@@ -17,11 +18,11 @@ $Agencias = selectIdAgencia($_POST["idAgencia"]);
                 </tr>   
                 <tr>
                     <td>Nome:</td>
-                    <td><input type="text" name="nomeAgencia" value="<?=$Agencias["nomeAgencia"]?>" /></td>
+                    <td><input type="text" name="nomeAgencia" value="<?=$Agencias["nomeAgencia"]?>" onkeyup="this.value = this.value.toUpperCase();"/></td>
                 </tr>
                 <tr>
                     <td>Cidade:</td>
-                    <td><input type="text" name="cidadeAgencia" value="<?=$Agencias["cidadeAgencia"]?>" size="20" /></td>
+                    <td><input type="text" name="cidadeAgencia" value="<?=$Agencias["cidadeAgencia"]?>" size="20" onkeyup="this.value = this.value.toUpperCase();"/></td>
                 </tr>
                 <tr>
                     <td>

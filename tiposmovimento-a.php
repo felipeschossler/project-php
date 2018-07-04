@@ -6,6 +6,7 @@ $TiposMovimento = selectIdTipoMov($_POST["idTipoMov"]);
 <head>
     <title>Alterar - Tipos de Movimento</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/mystyle.css" />
 </head>
 <body>
     <form name="dadosTiposMov" action="tiposmovimento-c.php" method="POST">
@@ -17,11 +18,11 @@ $TiposMovimento = selectIdTipoMov($_POST["idTipoMov"]);
                 </tr>   
                 <tr>
                     <td>Descrição:</td>
-                    <td><input type="text" name="descTipoMov" value="<?=$TiposMovimento["descTipoMov"]?>" /></td>
+                    <td><input type="text" name="descTipoMov" value="<?=$TiposMovimento["descTipoMov"]?>" onkeyup="this.value = this.value.toUpperCase();"/></td>
                 </tr>
                 <tr>
                     <td>Tipo Movimento:</td>
-                    <td><input type="text" name="tipoMov" value="<?=$TiposMovimento["tipoMov"]?>" size="20" /></td>
+                    <td><input type="text" name="tipoMov" value="<?=$TiposMovimento["tipoMov"]?>" size="20" onkeyup="this.value = this.value.toUpperCase();"/></td>
                 </tr>
                 <tr>
                     <td>
