@@ -34,10 +34,6 @@ CREATE TABLE TiposDeConta
     PRIMARY KEY (idTipoConta)
 );
 
-/*inserts na tabela tiposDeConta*/
-
-INSERT INTO TiposDeConta (descricaoTipoConta) VALUES ('Conta Corrente');
-
 /*tabela TiposDeMovimento*/
 
 CREATE TABLE TiposMovimento
