@@ -14,11 +14,11 @@
                     </tr>   
                     <tr>
                         <td>Descrição:</td>
-                        <td><input type="text" name="descTipoMov" value="" /></td>
+                        <td><input type="text" name="descTipoMov" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
                     </tr>
                     <tr>
                         <td>Tipo de Movimento: D-Débito C-Crédito</td>
-                        <td><input type="text" name="tipoMov" value="" /></td>
+                        <td><input type="text" name="tipoMov" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
                     </tr>
                     <tr>
                         <td><input type="submit" name="acao" value="Enviar" onclick="alert('Cadastro efetuado com sucesso.');"/></td>

@@ -10,28 +10,28 @@
             <table border="1">
                 <tbody>
                     <tr>
-                        <td>Código Cliente</td>
+                        <td>Código Cliente:</td>
                         <td><input type="text" name="idCliente" value="" disabled="true" /></td>
                     </tr>   
                     <tr>
-                        <td>Nome</td>
-                        <td><input type="text" name="nomeCliente" value="" /></td>
+                        <td>Nome:</td>
+                        <td><input type="text" name="nomeCliente" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
                     </tr>
                     <tr>
-                        <td>CPF</td>
-                        <td><input type="text" name="cpfCliente" value="" /></td>
+                        <td>CPF:</td>
+                        <td><input type="text" name="cpfCliente" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
                     </tr>
                     <tr>
-                        <td>Cidade</td>
-                        <td><input type="text" name="cidadeCliente" value="" /></td>
+                        <td>Cidade:</td>
+                        <td><input type="text" name="cidadeCliente" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
                     </tr>
                     <tr>
-                        <td>Tipo de Cliente F=Física/J=Jurídica</td>
-                        <td><input type="text" name="tipoCliente" value="" /></td>
+                        <td>Tipo de Cliente: F=Física/J=Jurídica</td>
+                        <td><input type="text" name="tipoCliente" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
                     </tr>
                     <tr>
-                        <td>Situação do Cliente A=Ativo/I=Inativo</td>
-                        <td><input type="text" name="situacaoCliente" value="" /></td>
+                        <td>Situação do Cliente: A=Ativo/I=Inativo</td>
+                        <td><input type="text" name="situacaoCliente" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
                     </tr>
                     <tr>
                         <td><input type="submit" name="acao" value="Enviar" onclick="alert('Cadastro efetuado com sucesso.');"/></td>
