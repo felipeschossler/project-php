@@ -9,15 +9,15 @@
             <table border="1">
                 <tbody>
                     <tr>
-                        <td>Código</td>
+                        <td>Código:</td>
                         <td><input type="text" name="idTipoMov" value="" disabled="true" /></td>
                     </tr>   
                     <tr>
-                        <td>Descrição</td>
+                        <td>Descrição:</td>
                         <td><input type="text" name="descTipoMov" value="" /></td>
                     </tr>
                     <tr>
-                        <td>Tipo de Movimento</td>
+                        <td>Tipo de Movimento: D-Débito C-Crédito</td>
                         <td><input type="text" name="tipoMov" value="" /></td>
                     </tr>
                     <tr>

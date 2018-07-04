@@ -12,23 +12,23 @@ $Clientes = selectIdCliente($_POST["idCliente"]);
         <table border="1">
             <tbody>
                 <tr>
-                    <td>Código Cliente</td>
+                    <td>Código Cliente:</td>
                     <td><input type="text" name="idCliente" value="<?=$Clientes["idCliente"]?>" size="20" disabled="true" /></td>
                 </tr>   
                 <tr>
-                    <td>Nome</td>
+                    <td>Nome:</td>
                     <td><input type="text" name="nomeCliente" value="<?=$Clientes["nomeCliente"]?>" /></td>
                 </tr>
                 <tr>
-                    <td>CPF</td>
+                    <td>CPF:</td>
                     <td><input type="text" name="cpfCliente" value="<?=$Clientes["cpfCliente"]?>" /></td>
                 </tr>
                 <tr>
-                    <td>Cidade</td>
+                    <td>Cidade:</td>
                     <td><input type="text" name="cidadeCliente" value="<?=$Clientes["cidadeCliente"]?>" /></td>
                 </tr>
                 <tr>
-                    <td>Tipo de Cliente F=Física/J=Jurídica</td>
+                    <td>Tipo de Cliente: F=Físico/J=Jurídico</td>
                     <td><input type="text" name="tipoCliente" value="<?=$Clientes["tipoCliente"]?>" /></td>
                 </tr>
                 <tr>

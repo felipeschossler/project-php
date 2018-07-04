@@ -11,8 +11,8 @@
     <table border="1">
         <thead>
             <tr>
-                <th>Código</th>
-                <th>Descrição</th>
+                <th>Código:</th>
+                <th>Descrição:</th>
                 <th>Editar</th>
                 <th>Excluir</th>
             </tr>

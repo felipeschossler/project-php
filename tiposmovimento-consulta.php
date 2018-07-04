@@ -11,8 +11,8 @@
     <table border="1">
         <thead>
             <tr>
-                <th>Descrição</th>
-                <th>Tipo Movimento</th>
+                <th>Descrição:</th>
+                <th>Tipo Movimento:</th>
                 <th>Editar</th>
                 <th>Excluir</th>
             </tr>

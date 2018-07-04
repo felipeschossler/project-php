@@ -12,11 +12,11 @@ $TiposDeConta = selectIdTipoConta($_POST["idTipoConta"]);
         <table border="1">
             <tbody>
                 <tr>
-                    <td>Código Tipo de Conta</td>
+                    <td>Código Tipo de Conta:</td>
                     <td><input type="text" name="idTipoConta" value="<?=$TiposDeConta["idTipoConta"]?>" size="20" disabled="true" /></td>
                 </tr>   
                 <tr>
-                    <td>Descrição</td>
+                    <td>Descrição:</td>
                     <td><input type="text" name="descricaoTipoConta" value="<?=$TiposDeConta["descricaoTipoConta"]?>" /></td>
                 </tr>
                 <tr>

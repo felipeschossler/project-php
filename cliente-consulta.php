@@ -11,11 +11,11 @@
     <table border="1">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>CPF</th>
-                <th>Cidade</th>
-                <th>Tipo de Cliente F=Física/J=Jurídica</th>
-                <th>Situação do Cliente A=Ativo/I=Inativo</th>
+                <th>Nome:</th>
+                <th>CPF:</th>
+                <th>Cidade:</th>
+                <th>Tipo de Cliente: F=Físico/J=Jurídico</th>
+                <th>Situação do Cliente: A=Ativo/I=Inativo</th>
                 <th>Editar</th>
             </tr>
         </thead>

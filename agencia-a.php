@@ -12,15 +12,15 @@ $Agencias = selectIdAgencia($_POST["idAgencia"]);
         <table border="1">
             <tbody>
                 <tr>
-                    <td>Código Agência</td>
+                    <td>Código Agência:</td>
                     <td><input type="text" name="idAgencia" value="<?=$Agencias["idAgencia"]?>" size="20" disabled="true" /></td>
                 </tr>   
                 <tr>
-                    <td>Nome</td>
+                    <td>Nome:</td>
                     <td><input type="text" name="nomeAgencia" value="<?=$Agencias["nomeAgencia"]?>" /></td>
                 </tr>
                 <tr>
-                    <td>Cidade</td>
+                    <td>Cidade:</td>
                     <td><input type="text" name="cidadeAgencia" value="<?=$Agencias["cidadeAgencia"]?>" size="20" /></td>
                 </tr>
                 <tr>
