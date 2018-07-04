@@ -51,13 +51,22 @@
         //executando a consulta
         $resultado = $banco->query($sql);
         //mostra todos os usuários dentro do array
-        
-        while ($row = mysqli_fetch_array($resultado)){
-            $grupo [] = $row;
+        if($resultado->num_rows === 0){
+            ?>
+                <script type="text/javascript">
+                alert("Nenhum Tipo de Conta foi cadastrado.");
+                window.location.href = "index.html";
+                </script>
+            <?php
         }
-
-        $banco->close();
-        return $grupo;
+        else{
+            while ($row = mysqli_fetch_array($resultado)){
+                $grupo [] = $row;
+            }
+            
+            $banco->close();
+            return $grupo;
+        }
 
     }
 

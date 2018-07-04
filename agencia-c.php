@@ -51,15 +51,24 @@
         $sql = "SELECT * FROM Agencias ORDER BY nomeAgencia";
         //executando a consulta
         $resultado = $banco->query($sql);
-        //mostra todos os usuários dentro do array
-        
-        while ($row = mysqli_fetch_array($resultado)){
-            $grupo [] = $row;
+        //mostra um alert se não tiver nem um dado na table
+        if($resultado->num_rows === 0){
+            ?>
+                <script type="text/javascript">
+                alert("Nenhuma agência foi cadastrada.");
+                window.location.href = "index.html";
+                </script>
+            <?php
         }
-
-        $banco->close();
-        return $grupo;
-
+        else{
+            //mostra todos os usuários dentro do array
+            while ($row = mysqli_fetch_array($resultado)){
+                $grupo [] = $row;
+            }
+            
+            $banco->close();
+            return $grupo;
+        }
     }
 
     //funcao que mostra as agencias já preenchido para a alteração
