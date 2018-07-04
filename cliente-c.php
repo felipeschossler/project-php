@@ -55,13 +55,22 @@
         //executando a consulta
         $resultado = $banco->query($sql);
         //mostra todos os usuários dentro do array
-        
-        while ($row = mysqli_fetch_array($resultado)){
-            $grupo [] = $row;
+        if($resultado->num_rows === 0){
+            ?>
+                <script type="text/javascript">
+                alert("Nenhum cliente está cadastrado ou ativo.");
+                window.location.href = "index.html";
+                </script>
+            <?php
         }
+        else{
+            while ($row = mysqli_fetch_array($resultado)){
+                $grupo [] = $row;
+            }
 
-        $banco->close();
-        return $grupo;
+            $banco->close();
+            return $grupo;
+        }
 
     }
 
