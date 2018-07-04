@@ -11,6 +11,7 @@
     <table border="1">
         <thead>
             <tr>
+                <th>Código:</th>
                 <th>Nome</th>
                 <th>Cidade</th>
                 <th>Editar</th>
@@ -20,6 +21,7 @@
         <tbody>
             <?php foreach ($grupo as $Agencias) { ?>
                 <tr>
+                    <td><?=$Agencias["idAgencia"]?></td>
                     <td><?=$Agencias["nomeAgencia"]?></td>
                     <td><?=$Agencias["cidadeAgencia"]?></td>
                     <td>

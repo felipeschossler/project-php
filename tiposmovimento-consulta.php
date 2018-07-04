@@ -11,6 +11,7 @@
     <table border="1">
         <thead>
             <tr>
+                <th>Código:</th>
                 <th>Descrição:</th>
                 <th>Tipo Movimento:</th>
                 <th>Editar</th>
@@ -20,6 +21,7 @@
         <tbody>
             <?php foreach ($grupo as $TiposMovimento) { ?>
                 <tr>
+                    <td><?=$TiposMovimento["idTipoMov"]?></td>
                     <td><?=$TiposMovimento["descTipoMov"]?></td>
                     <td><?=$TiposMovimento["tipoMov"]?></td>
                     <td>
