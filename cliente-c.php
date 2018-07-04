@@ -51,7 +51,7 @@
         
         $banco = abrirBanco();
         //a consulta sql
-        $sql = "SELECT * FROM Clientes ORDER BY nomeCliente";
+        $sql = "SELECT * FROM Clientes WHERE situacaoCliente = 'A' ORDER BY nomeCliente";
         //executando a consulta
         $resultado = $banco->query($sql);
         //mostra todos os usuários dentro do array
