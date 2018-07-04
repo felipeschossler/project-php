@@ -3,7 +3,7 @@ include("cliente-c.php");
 $Clientes = selectIdCliente($_POST["idCliente"]);
 ?>
 <head>
-    <title>Alterar Cliente</title>
+    <title>Alterar - Cliente</title>
     <meta charset="utf-8">
 </head>
 <form name="dadosCliente" action="cliente-c.php" method="POST">
