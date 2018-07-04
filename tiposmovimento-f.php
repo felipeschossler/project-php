@@ -23,7 +23,7 @@
                         <td><input type="text" name="tipoMov" value="" /></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" name="acao" value="Enviar" /></td>
+                        <td><input type="submit" name="acao" value="Enviar" onclick="alert('Cadastro efetuado com sucesso.');"/></td>
                     </tr>
 
                 </tbody>
