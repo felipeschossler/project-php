@@ -37,5 +37,6 @@ $TiposMovimento = selectIdTipoMov($_POST["idTipoMov"]);
             </tbody>
         </table>
     </form>
+    <a href="index.html">Voltar ao início</a>
 </body>
 </html>

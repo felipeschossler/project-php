@@ -33,5 +33,6 @@ $Agencias = selectIdAgencia($_POST["idAgencia"]);
             </tbody>
         </table>
     </form>
+    <a href="index.html">Voltar ao início</a>
 </body>
 </html>

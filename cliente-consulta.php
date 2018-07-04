@@ -46,6 +46,8 @@
             <?php } ?>
         </tbody>
     </table>
+    <br>
+    <a href="index.html">Voltar ao início</a>
 </body>
 </html>
         

@@ -5,7 +5,6 @@
     </head>
     <body>
         <form name="dadosTipoMov" action="tiposmovimento-c.php" method="POST">
-
             <table border="1">
                 <tbody>
                     <tr>
@@ -25,7 +24,7 @@
                     </tr>
                 </tbody>
             </table>
-
         </form>
+        <a href="index.html">Voltar ao início</a>
     </body>          
 </html>
