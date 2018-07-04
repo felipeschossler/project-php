@@ -48,11 +48,6 @@ CREATE TABLE TiposMovimento
     PRIMARY KEY (idTipoMov)
 );
 
-/*inserts na tabela TiposDeMovimento*/
-
-INSERT INTO TiposMovimento (descTipoMov, tipoMov) VALUES ('Retirada em Dinheiro','Débito');
-INSERT INTO TiposMovimento (descTipoMov, tipoMov) VALUES ('Depósito em Dinheiro','Crédito');
-
 /*tabela Conta*/
 
 CREATE TABLE Contas
