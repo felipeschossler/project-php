@@ -21,8 +21,13 @@ $TiposMovimento = selectIdTipoMov($_POST["idTipoMov"]);
                     <td><input type="text" name="descTipoMov" value="<?=$TiposMovimento["descTipoMov"]?>" onkeyup="this.value = this.value.toUpperCase();"/></td>
                 </tr>
                 <tr>
-                    <td>Tipo Movimento:</td>
-                    <td><input type="text" name="tipoMov" value="<?=$TiposMovimento["tipoMov"]?>" size="20" onkeyup="this.value = this.value.toUpperCase();"/></td>
+                    <td>Tipo Movimento: D-Débito C-Crédito</td>
+                    <td>
+                        <select name="tipoMovimento">
+                            <option name="tipoMovimento" value="D">D</option>
+                            <option name="tipoMovimento" value="C">C</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>
