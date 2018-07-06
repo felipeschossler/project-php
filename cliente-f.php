@@ -27,11 +27,21 @@
                     </tr>
                     <tr>
                         <td>Tipo de Cliente: F=Física/J=Jurídica</td>
-                        <td><input type="text" name="tipoCliente" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
+                        <td>
+                            <select name="tipoCliente">
+                                <option name="tipoCliente" value="F">F</option>
+                                <option name="tipoCliente" value="J">J</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Situação do Cliente: A=Ativo/I=Inativo</td>
-                        <td><input type="text" name="situacaoCliente" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
+                        <td>
+                            <select name="situacaoCliente">
+                                <option name="situacaoCliente" value="A">A</option>
+                                <option name="situacaoCliente" value="I">I</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td><input type="submit" name="acao" value="Enviar" onclick="alert('Cadastro efetuado com sucesso.');"/></td>
