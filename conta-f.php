@@ -1,7 +1,11 @@
 <?php 
     //Agencia
     include("agencia-c.php");
-    $grupo = selectTodos();
+    include("cliente-c.php");
+
+    $grupo = selectTodos();    
+    $grupoCli = vemNenemCliente();
+    
 ?>
 
 <DOCTYPE html>
@@ -38,7 +42,7 @@
                             <td>
                                 <select name="idCliente">
                                     <?php
-                                        foreach ($grupo as $Clientes)
+                                        foreach ($grupoCli as $Clientes)
                                         echo '<option value=" ' . $Clientes['idCliente'] . '"> ' . $Clientes['idCliente'] . ' </option>';
                                     ?>
                                 </select> 

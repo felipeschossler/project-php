@@ -15,20 +15,20 @@
     }
     
     //funcao que passa o local e as credenciais para logar no banco
-    function abrirBanco(){
+    function abrirBancoCliente(){
         $conexao = new mysqli("localhost","root","","banco");
         return $conexao;
     }
 
     //funcao que redireciona para a página inicial
-    function voltarIndex(){
+    function voltarIndexCliente(){
         header("location:index.html");
     }
 
     //funcao que insere agencia
     function inserirCliente(){
 
-        $banco = abrirBanco();
+        $banco = abrirBancoCliente();
         //declarando as variáveis usadas na inserção dos dados
         $nomeCliente = $_POST["nomeCliente"];
         $cpfCliente = $_POST["cpfCliente"];
@@ -43,13 +43,13 @@
         $banco->query($sql);
         //fechando a conexao com o banco
         $banco->close();
-        voltarIndex();
+        voltarIndexCliente();
 
     }
 
-    function selectTodos(){
+    function vemNenemCliente(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoCliente();
         //a consulta sql
         $sql = "SELECT * FROM Clientes WHERE situacaoCliente = 'A' ORDER BY nomeCliente";
         //executando a consulta
@@ -77,7 +77,7 @@
     //funcao que mostra as agencias já preenchido para a alteração
     function selectIdCliente($idCliente){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoCliente();
         //a consulta sql
         $sql = "SELECT * FROM Clientes WHERE idCliente ='$idCliente'";
         $resultado = $banco->query($sql);
@@ -90,7 +90,7 @@
     //funcao que altera uma único agencia especifica
     function alterarCliente(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoCliente();
         
         //declarando as variáveis usadas no update
         $idCliente = $_POST["idCliente"];
@@ -104,13 +104,13 @@
         $sql = "UPDATE Clientes SET nomeCliente='$nomeCliente', cpfCliente='$cpfCliente', cidadeCliente='$cidadeCliente', tipoCliente='$tipoCliente', situacaoCliente='$situacaoCliente' WHERE idCliente='$idCliente'";
         $banco->query($sql);
         $banco->close();
-        voltarIndex();
+        voltarIndexCliente();
 
     }
 
     function excluirCliente(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoCliente();
 
         //variável id que vai ser usada na consulta
         $idCliente = $_POST["idCliente"]; 
@@ -119,7 +119,7 @@
         $sql = "DELETE FROM Clientes WHERE idCliente='$idCliente'";
         $banco->query($sql);
         $banco->close();
-        voltarIndex();
+        voltarIndexCliente();
 
     }
 
