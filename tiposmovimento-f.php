@@ -18,7 +18,12 @@
                     </tr>
                     <tr>
                         <td>Tipo de Movimento: D-Débito C-Crédito</td>
-                        <td><input type="text" name="tipoMov" value="" onkeyup="this.value = this.value.toUpperCase();"/></td>
+                        <td>
+                            <select name="tipoMov">
+                                <option name="tipoMov" value="D">D</option>
+                                <option name="tipoMov" value="C">C</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td><input type="submit" name="acao" value="Enviar" onclick="alert('Cadastro efetuado com sucesso.');"/></td>
