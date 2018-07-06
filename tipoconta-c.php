@@ -15,20 +15,20 @@
     }
     
     //funcao que passa o local e as credenciais para logar no banco
-    function abrirBanco(){
+    function abrirBancoTC(){
         $conexao = new mysqli("localhost","root","","banco");
         return $conexao;
     }
 
     //funcao que redireciona para a página inicial
-    function voltarIndex(){
+    function voltarIndexTC(){
         header("location:index.html");
     }
 
     //funcao que insere tipo de conta
     function inserirTipoConta(){
 
-        $banco = abrirBanco();
+        $banco = abrirBancoTC();
         //declarando as variáveis usadas na inserção dos dados
         $descricaoTipoConta = $_POST["descricaoTipoConta"];
 
@@ -39,13 +39,13 @@
         $banco->query($sql);
         //fechando a conexao com o banco
         $banco->close();
-        voltarIndex();
+        voltarIndexTC();
 
     }
 
-    function selectTodos(){
+    function selectTodosTC(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTC();
         //a consulta sql
         $sql = "SELECT * FROM TiposDeConta ORDER BY descricaoTipoConta";
         //executando a consulta
@@ -73,7 +73,7 @@
     //funcao que mostra o tipo de conta já preenchido para a alteração
     function selectIdTipoConta($idTipoConta){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTC();
         //a consulta sql
         $sql = "SELECT * FROM TiposDeConta WHERE idTipoConta ='$idTipoConta'";
         $resultado = $banco->query($sql);
@@ -86,7 +86,7 @@
     //funcao que altera um tipo de movimento especifico
     function alterarTipoConta(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTC();
         
         //declarando as variáveis usadas no update
         $idTipoConta = $_POST["idTipoConta"];
@@ -96,13 +96,13 @@
         $sql = "UPDATE TiposDeConta SET descricaoTipoConta='$descricaoTipoConta' WHERE idTipoConta='$idTipoConta'";
         $banco->query($sql);
         $banco->close();
-        voltarIndex();
+        voltarIndexTC();
 
     }
 
     function excluirTipoConta(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTC();
 
         //variável id que vai ser usada na consulta
         $idTipoConta = $_POST["idTipoConta"]; 
@@ -111,7 +111,7 @@
         $sql = "DELETE FROM TiposDeConta WHERE idTipoConta='$idTipoConta'";
         $banco->query($sql);
         $banco->close();
-        voltarIndex();
+        voltarIndexTC();
 
     }
 

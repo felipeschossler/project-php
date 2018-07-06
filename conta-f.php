@@ -1,10 +1,17 @@
 <?php 
     //Agencia
     include("agencia-c.php");
-    include("cliente-c.php");
-
     $grupo = selectTodos();    
-    $grupoCli = vemNenemCliente();
+
+    //Cliente
+    include("cliente-c.php");
+    $grupoCli = selectTodosClientes();
+
+    //TipoConta
+    include("tipoconta-c.php");
+    $grupoTC = selectTodosTC();
+
+
     
 ?>
 
@@ -43,14 +50,21 @@
                                 <select name="idCliente">
                                     <?php
                                         foreach ($grupoCli as $Clientes)
-                                        echo '<option value=" ' . $Clientes['idCliente'] . '"> ' . $Clientes['idCliente'] . ' </option>';
+                                        echo '<option value=" ' . $Clientes['idCliente'] . '"> ' . $Clientes['nomeCliente'] . ' </option>';
                                     ?>
                                 </select> 
                             </td>
                         </tr>
                         <tr>
                             <td>Tipo Conta</td>
-                            <td><input type="text" name="idTipoConta" value="" /></td>
+                            <td>
+                                <select name="idTipoConta">
+                                    <?php
+                                        foreach ($grupoTC as $TiposDeConta)
+                                        echo '<option value=" ' . $TiposDeConta['idTipoConta'] . '"> ' . $TiposDeConta['descricaoTipoConta'] . ' </option>';
+                                    ?>
+                                </select> 
+                            </td>
                         </tr>
                         <tr>
                             <td>Limite de Conta</td>

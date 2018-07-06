@@ -47,7 +47,7 @@
 
     }
 
-    function vemNenemCliente(){
+    function selectTodosClientes(){
         
         $banco = abrirBancoCliente();
         //a consulta sql

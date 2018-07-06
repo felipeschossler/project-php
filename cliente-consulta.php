@@ -1,5 +1,5 @@
 <?php include("cliente-c.php");
-    $grupo = vemNenemCliente();
+    $grupo = selectTodosClientes();
     //var_dump($grupo);
 ?>
 <html lang="pt-br">

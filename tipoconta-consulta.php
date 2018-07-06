@@ -1,5 +1,5 @@
 <?php include("tipoconta-c.php");
-    $grupo = selectTodos();
+    $grupo = selectTodosTC();
     //var_dump($grupo);
 ?>
 <html lang="pt-br">
