@@ -22,7 +22,7 @@
 
     //funcao que redireciona para a página inicial
     function voltarIndex(){
-        header("location:index.html");
+        header("location:index.php");
     }
 
     //funcao que insere agencia
