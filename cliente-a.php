@@ -30,11 +30,21 @@ $Clientes = selectIdCliente($_POST["idCliente"]);
                 </tr>
                 <tr>
                     <td>Tipo de Cliente: F=Físico/J=Jurídico</td>
-                    <td><input type="text" name="tipoCliente" value="<?=$Clientes["tipoCliente"]?>" onkeyup="this.value = this.value.toUpperCase();"/></td>
+                    <td>
+                        <select name="tipoCliente">
+                            <option name="tipoCliente" value="F">F</option>
+                            <option name="tipoCliente" value="J">J</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>Situação do Cliente A=Ativo/I=Inativo</td>
-                    <td><input type="text" name="situacaoCliente" value="<?=$Clientes["situacaoCliente"]?>" onkeyup="this.value = this.value.toUpperCase();"/></td>
+                    <td>
+                        <select name="situacaoCliente">
+                            <option name="situacaoCliente" value="A">A</option>
+                            <option name="situacaoCliente" value="I">I</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>
