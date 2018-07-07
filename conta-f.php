@@ -72,7 +72,12 @@
                         </tr>
                         <tr>
                             <td>Data de Abertura</td>
-                            <td><input type="text" name="dataAbertura" value="" /></td>
+                            <td>
+                                <?php
+                                    $dataAbertura = date("Y-m-d");
+                                    echo "" . date("Y-m-d");
+                                ?>
+                            </td>
                         </tr>
                         <tr>
                             <td><input type="submit" name="acao" value="Enviar" /></td>
