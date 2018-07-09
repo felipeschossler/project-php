@@ -19,9 +19,9 @@
                     <tr>
                         <td>Tipo de Movimento: D-Débito C-Crédito</td>
                         <td>
-                            <select name="tipoMovimento">
-                                <option name="tipoMovimento" value="D">D</option>
-                                <option name="tipoMovimento" value="C">C</option>
+                            <select name="tipoMov">
+                                <option name="tipoMov" value="D">D</option>
+                                <option name="tipoMov" value="C">C</option>
                             </select>
                         </td>
                     </tr>
