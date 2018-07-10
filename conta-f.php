@@ -1,4 +1,13 @@
 <?php 
+
+    //pega por post o componente codigo do formulario -F.
+    @$idConta 	          = $_POST['idConta'];
+    @$nomeAgencia         = $_POST['nomeAgencia'];  //FK
+    @$nomeCliente         = $_POST['nomeCliente'];  //FK
+    @$descricaoTipoConta  = $_POST['descricaoTipoConta'];  //FK
+    @$limiteConta         = $_POST['limiteConta'];
+    @$dataAbertura        = $_POST['dataAbertura'];
+
     //Agencia
     include("agencia-c.php");
     $grupo = selectTodos();    
@@ -22,7 +31,7 @@
             <meta charset="utf-8">
         </head>
         
-            <form name="dadosConta" action="conta-c.php" method="POST">
+            <form name="Contas" action="conta-c.php" method="POST">
     
                 <table border="1">
                     <tbody>
@@ -36,7 +45,7 @@
                             <td>Agencia</td>
                             <td>
                                 <select name="idAgencia">
-                                    <?php 
+                                    <?php
                                         foreach ($grupo as $Agencias)
                                         echo '<option value=" ' . $Agencias['idAgencia'] . '"> ' . $Agencias['nomeAgencia'] . ' </option>';
                                     ?>
