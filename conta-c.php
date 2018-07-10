@@ -1,6 +1,5 @@
 <?php  
-    class Contas{
-
+    
     @$idConta 	          = $_POST['idConta'];
     @$nomeAgencia         = $_POST['nomeAgencia'];  //FK
     @$nomeCliente         = $_POST['nomeCliente'];  //FK
@@ -8,20 +7,30 @@
     @$limiteConta         = $_POST['limiteConta'];
     @$dataAbertura        = $_POST['dataAbertura'];
 
+    $Conta = new Contas($idConta, $nomeAgencia, $nomeCliente, $descricaoTipoConta, $limiteConta, $dataAbertura);
+
+    //funcao que passa o local e as credenciais para logar no banco
+    function abrirBanco(){
+        $conexao = new mysqli("localhost","root","","banco");
+        return $conexao;
+    }
+
     //verificando valor da acao para redirecionar para a determinada acao
     if(isset($_POST["acao"])){
         if ($_POST["acao"] == "Enviar"){
-            inserirConta();
+            $Conta -> inserirConta();
         }
         if ($_POST["acao"] == "Alterar"){
-            alterarConta();
+            $Conta -> alterarConta();
         }
         if ($_POST["acao"] == "Excluir"){
-            excluirConta();
+            $Conta -> excluirConta();
         }
     
     }
 
+    
+    class Contas{
 
         private $idConta;
         private $nomeAgencia;
@@ -120,14 +129,6 @@
         
         }
         
-
-        
-        //funcao que passa o local e as credenciais para logar no banco
-        function abrirBanco(){
-            $conexao = new mysqli("localhost","root","","banco");
-            return $conexao;
-        }
-
         //funcao que redireciona para a página inicial
         function voltarIndex(){
             header("location:index.html");
@@ -136,10 +137,7 @@
         //funcao que insere agencia
         function inserirConta(){
 
-            $banco = abrirBanco();
-            //declarando as variáveis usadas na inserção dos dados
-            $limiteConta = $_POST["limiteConta"];
-            $dataAbertura = $_POST["dataAbertura"];
+            $conexao = abrirBanco();
 
             //a consulta sql
             $sql = "INSERT INTO Contas(
@@ -156,9 +154,9 @@
                     '".$this ->getDataAbertura()."');";
             
             //executando a inclusão
-            $banco->query($sql);
+            $conexao -> query($sql);
             //fechando a conexao com o banco
-            $banco->close();
+            $conexao -> close();
             voltarIndex();
 
         }
