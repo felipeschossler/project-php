@@ -60,6 +60,33 @@
         
         }
 
+
+    function selectTodosConta(){
+        
+        $banco = abrirBanco();
+        //a consulta sql
+        $sql = "SELECT * FROM Contas ORDER BY limiteConta";
+        //executando a consulta
+        $resultado = $banco->query($sql);
+        //mostra todos os usuários dentro do array
+        if($resultado->num_rows === 0){
+            ?>
+                <script type="text/javascript">
+                alert("Nenhuma conta está cadastrada.");
+                window.location.href = "index.html";
+                </script>
+            <?php
+        }else{
+            while ($row = mysqli_fetch_array($resultado)){
+                $grupo [] = $row;
+            }
+
+            $banco->close();
+            return $grupo;
+        }
+
+    }
+
         //nomeCliente
         
         public function getNomeCliente(){
@@ -79,6 +106,7 @@
         //descricaoTipoConta
 
         public function getDescricaoTipoConta(){
+
 
             "SELECT idTipoConta
             FROM TiposDeConta
