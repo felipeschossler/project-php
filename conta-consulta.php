@@ -1,4 +1,14 @@
-<?php include("conta-c.php");
+<?php 
+
+    include("conta-c.php");
+
+    //pega por post o componente codigo do formulario -F.
+    @$idConta 	          = $_POST['idConta'];
+    @$nomeAgencia         = $_POST['nomeAgencia'];  //FK
+    @$nomeCliente         = $_POST['nomeCliente'];  //FK
+    @$descricaoTipoConta  = $_POST['descricaoTipoConta'];  //FK
+    @$limiteConta         = $_POST['limiteConta'];
+    
     $grupo = selectTodos();
     //var_dump($grupo);
 ?>
