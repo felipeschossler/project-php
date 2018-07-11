@@ -1,13 +1,5 @@
 <?php 
 
-    //pega por post o componente codigo do formulario -F.
-    @$idConta 	          = $_POST['idConta'];
-    @$nomeAgencia         = $_POST['nomeAgencia'];  //FK
-    @$nomeCliente         = $_POST['nomeCliente'];  //FK
-    @$descricaoTipoConta  = $_POST['descricaoTipoConta'];  //FK
-    @$limiteConta         = $_POST['limiteConta'];
-    @$dataAbertura        = $_POST['dataAbertura'];
-
     //Agencia
     include("agencia-c.php");
     $grupo = selectTodos();    
@@ -47,7 +39,7 @@
                                 <select name="idAgencia">
                                     <?php
                                         foreach ($grupo as $Agencias)
-                                        echo '<option value=" ' . $Agencias['idAgencia'] . '"> ' . $Agencias['nomeAgencia'] . ' </option>';
+                                        echo '<option name=" '.$Agencias['nomeAgencia'].' " value=" ' . $Agencias['idAgencia'] . '"> ' . $Agencias['nomeAgencia'] . ' </option>';
                                     ?>
                                 </select> 
                             </td>
@@ -59,7 +51,7 @@
                                 <select name="idCliente">
                                     <?php
                                         foreach ($grupoCli as $Clientes)
-                                        echo '<option value=" ' . $Clientes['idCliente'] . '"> ' . $Clientes['nomeCliente'] . ' </option>';
+                                        echo '<option name=" '.$Clientes['nomeCliente'].' " value=" ' . $Clientes['idCliente'] . '"> ' . $Clientes['nomeCliente'] . ' </option>';
                                     ?>
                                 </select> 
                             </td>
@@ -70,7 +62,7 @@
                                 <select name="idTipoConta">
                                     <?php
                                         foreach ($grupoTC as $TiposDeConta)
-                                        echo '<option value=" ' . $TiposDeConta['idTipoConta'] . '"> ' . $TiposDeConta['descricaoTipoConta'] . ' </option>';
+                                        echo '<option name=" '.$TiposDeConta['descricaoTipoConta'].' " value=" ' . $TiposDeConta['idTipoConta'] . '"> ' . $TiposDeConta['descricaoTipoConta'] . ' </option>';
                                     ?>
                                 </select> 
                             </td>
