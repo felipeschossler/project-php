@@ -15,20 +15,20 @@
     }
     
     //funcao que passa o local e as credenciais para logar no banco
-    function abrirBanco(){
+    function abrirBancoTipoMov(){
         $conexao = new mysqli("localhost","root","","banco");
         return $conexao;
     }
 
     //funcao que redireciona para a página inicial
-    function voltarIndex(){
+    function voltarIndexTipoMov(){
         header("location:index.html");
     }
 
     //funcao que insere agencia
     function inserirTipoMov(){
 
-        $banco = abrirBanco();
+        $banco = abrirBancoTipoMov();
         //declarando as variáveis usadas na inserção dos dados
         $descTipoMov = $_POST["descTipoMov"];
         $tipoMov = $_POST["tipoMov"];
@@ -40,13 +40,13 @@
         $banco->query($sql);
         //fechando a conexao com o banco
         $banco->close();
-        voltarIndex();
+        voltarIndexTipoMov();
 
     }
 
-    function selectTodos(){
+    function selectTodosTipoMov(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTipoMov();
         //a consulta sql
         $sql = "SELECT * FROM TiposMovimento";
         //executando a consulta
@@ -74,7 +74,7 @@
     //funcao que mostra as agencias já preenchido para a alteração
     function selectIdTipoMov($idTipoMov){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTipoMov();
         //a consulta sql
         $sql = "SELECT * FROM TiposMovimento WHERE idTipoMov ='$idTipoMov'";
         $resultado = $banco->query($sql);
@@ -87,7 +87,7 @@
     //funcao que altera uma único agencia especifica
     function alterarTipoMov(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTipoMov();
         
         //declarando as variáveis usadas no update
         $idTipoMov = $_POST["idTipoMov"];
@@ -98,13 +98,13 @@
         $sql = "UPDATE TiposMovimento SET descTipoMov='$descTipoMov',tipoMov='$tipoMov' WHERE idTipoMov='$idTipoMov'";
         $banco->query($sql);
         $banco->close();
-        voltarIndex();
+        voltarIndexTipoMov();
 
     }
 
     function excluirTipoMov(){
         
-        $banco = abrirBanco();
+        $banco = abrirBancoTipoMov();
 
         //variável id que vai ser usada na consulta
         $idTipoMov = $_POST["idTipoMov"]; 
@@ -113,7 +113,7 @@
         $sql = "DELETE FROM TiposMovimento WHERE idTipoMov='$idTipoMov'";
         $banco->query($sql);
         $banco->close();
-        voltarIndex();
+        voltarIndexTipoMov();
 
     }
 

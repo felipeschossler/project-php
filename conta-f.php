@@ -39,7 +39,7 @@
                                 <select name="idAgencia">
                                     <?php
                                         foreach ($grupo as $Agencias)
-                                        echo '<option name=" '.$Agencias['nomeAgencia'].' " value=" ' . $Agencias['idAgencia'] . '"> ' . $Agencias['nomeAgencia'] . ' </option>';
+                                        echo '<option name=" '.$Agencias['idAgencia'].' " value=" ' . $Agencias['idAgencia'] . '"> ' . $Agencias['nomeAgencia'] . ' </option>';
                                     ?>
                                 </select> 
                             </td>
@@ -51,7 +51,7 @@
                                 <select name="idCliente">
                                     <?php
                                         foreach ($grupoCli as $Clientes)
-                                        echo '<option name=" '.$Clientes['nomeCliente'].' " value=" ' . $Clientes['idCliente'] . '"> ' . $Clientes['nomeCliente'] . ' </option>';
+                                        echo '<option name=" '.$Clientes['idCliente'].' " value=" ' . $Clientes['idCliente'] . '"> ' . $Clientes['nomeCliente'] . ' </option>';
                                     ?>
                                 </select> 
                             </td>
@@ -62,7 +62,7 @@
                                 <select name="idTipoConta">
                                     <?php
                                         foreach ($grupoTC as $TiposDeConta)
-                                        echo '<option name=" '.$TiposDeConta['descricaoTipoConta'].' " value=" ' . $TiposDeConta['idTipoConta'] . '"> ' . $TiposDeConta['descricaoTipoConta'] . ' </option>';
+                                        echo '<option name=" '.$TiposDeConta['idTipoConta'].' " value=" ' . $TiposDeConta['idTipoConta'] . '"> ' . $TiposDeConta['descricaoTipoConta'] . ' </option>';
                                     ?>
                                 </select> 
                             </td>
@@ -72,13 +72,8 @@
                             <td><input type="text" name="limiteConta" value="" /></td>
                         </tr>
                         <tr>
-                            <td>Data de Abertura</td>
-                            <td>
-                                <?php
-                                    $dataAbertura = date("Y-m-d");
-                                    echo "" . date("Y-m-d");
-                                ?>
-                            </td>
+                            <td>Data de Abertura - AAAA-MM-DD</td>
+                            <td><input type="text" name="dataAbertura" value="" /></td>
                         </tr>
                         <tr>
                             <td><input type="submit" name="acao" value="Enviar" /></td>

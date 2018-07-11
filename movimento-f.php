@@ -8,7 +8,7 @@
     $grupoConta = selectTodosConta();
 
     //Tipomov
-    include("tipomov-c.php");
+    include("tiposmovimento-c.php");
     $grupoTipoMov = selectTodosTipoMov();
 ?>
 
@@ -18,12 +18,12 @@
         <title>Gerar Movimento</title>
         <meta charset="utf-8">
     </head>
-        <form name="dadosConta" action="movimento-c.php" method="POST">
+        <form name="Movimentos" action="movimento-c.php" method="POST">
             <table border="1">
                 <tbody>
                     <tr>
                         <td>Cliente:</td>
-                        <td><input type="text" name="idCliente" value="<?=$Clientes["nomeCliente"]?>" disabled="true" /></td>
+                        <td><input type="text" name="<?=$Clientes["idCliente"]?>" value="<?=$Clientes["idCliente"]?>" disabled="true" /></td>
                     </tr>   
                     <tr>
                         <td>Conta:</td>
@@ -31,7 +31,7 @@
                             <select name="idConta">
                                 <?php 
                                     foreach ($grupoConta as $Contas)
-                                    echo '<option value=" ' . $Contas['idConta'] . '"> ' . $Contas['nomeAgencia'] . ' </option>';
+                                    echo '<option name="' . $Contas['idConta'] . '" value=" ' . $Contas['idConta'] . '"> ' . $Contas['idConta'] . ' </option>';
                                 ?>
                             </select> 
                         </td>
@@ -42,23 +42,18 @@
                             <select name="idTipoMov">
                                 <?php
                                     foreach ($grupoTipoMov as $TiposMovimento)
-                                    echo '<option value=" ' . $TiposMovimento['idTipoMov'] . '"> ' . $TiposMovimento['descricaoTipoMovimento'] . ' </option>';
+                                    echo '<option name="' . $TiposMovimento['idTipoMov'] . '" value=" ' . $TiposMovimento['idTipoMov'] . '"> ' . $TiposMovimento['idTipoMov'] . ' </option>';
                                 ?>
                             </select> 
                         </td>
                     </tr>
                     <tr>
-                        <td>Valor do Movimento:</td>
-                        <td><input type="text" name="valorMovimento" value="" /></td>
+                        <td>Data Movimento - AAAA-MM-DD</td> 
+                        <td><input type="text" name="dataMovimento" value="" /></td>
                     </tr>
                     <tr>
-                        <td>Data de Abertura:</td>
-                        <td>
-                            <?php
-                                $dataAbertura = date("Y-m-d");
-                                echo "" . date("Y-m-d");
-                            ?>
-                        </td>
+                        <td>Valor do Movimento:</td>
+                        <td><input type="text" name="valorMovimento" value="" /></td>
                     </tr>
                     <tr>
                         <td><input type="submit" name="acao" value="Enviar" /></td>

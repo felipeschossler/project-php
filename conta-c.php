@@ -30,24 +30,26 @@
 
         $banco = abrirBanco();
         //declarando as variáveis usadas na inserção dos dados
-        
-        $nomeAgencia         = $_POST['nomeAgencia'];  //FK
-        $nomeCliente         = $_POST['nomeCliente'];  //FK
-        $descricaoTipoConta  = $_POST['descricaoTipoConta'];  //FK
-        $limiteConta         = $_POST['limiteConta'];
-        $dataAbertura        = $_POST['dataAbertura'];
+        $idConta      = $_POST['idConta'];
+        $idAgencia    = $_POST['idAgencia'];  //FK
+        $idCliente    = $_POST['idCliente'];  //FK
+        $idTipoConta  = $_POST['idTipoConta'];  //FK
+        $limiteConta  = $_POST['limiteConta'];
+        $dataAbertura = $_POST['dataAbertura'];
 
         //a consulta sql
         $sql = "INSERT INTO Contas(
-                    nomeAgencia, 
-                    nomeCliente, 
-                    descricaoTipoConta, 
+                    idConta,
+                    idAgencia, 
+                    idCliente, 
+                    idTipoConta, 
                     limiteConta, 
                     dataAbertura) 
                 VALUES (
-                    '$nomeAgencia',
-                    '$nomeCliente',
-                    '$descricaoTipoConta',
+                    'NULL',
+                    '$idAgencia',
+                    '$idCliente',
+                    '$idTipoConta',
                     '$limiteConta',
                     '$dataAbertura')";
         
